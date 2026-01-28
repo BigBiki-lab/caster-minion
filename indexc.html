@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Page combined</title>
+    <title>Page A Level</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylepage2.css">
 <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
@@ -10,7 +10,7 @@
         height: 80vh;
         display: flex;
         flex-direction: column;
-        gap: 10%;
+        gap: 5%;
         margin: 1rem;
         margin-bottom: auto;
         margin-top: 10vh;
@@ -38,7 +38,7 @@
         }
       h1 {
         color: #474973;
-        font-size: 25px;
+        font-size: 23px;
         margin: 0;
         margin-top: 1rem;
         @media (max-width: 800px){
@@ -57,7 +57,7 @@
 
 <div class="navbar">
     <div class="dropdown">
-        <button class="dropbtn">Paper 1
+        <button class="dropbtn">Modelling Physics
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
@@ -70,7 +70,7 @@
         </div>
     </div>
     <div class="dropdown">
-        <button class="dropbtn">Paper 2
+        <button class="dropbtn">Exploring Physics
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
@@ -84,6 +84,19 @@
 <!--            <a href="#">MCQ</a>-->
 <!--            <a href="#">Past paper questions by topic</a>-->
 <!--            <a href="#">Core practicals</a>-->
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Unified Physics
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="Content1.html">Content</a>
+            <a href="Checklists-paper-1.html">Checklists</a>
+            <!--            <a href="#">Flash cards</a>-->
+            <!--            <a href="#">MCQ</a>-->
+            <!--            <a href="#">Past paper questions by topic</a>-->
+            <!--            <a href="#">Core practicals</a>-->
         </div>
     </div>
     <a href="past-papers.html">Past papers</a>
@@ -160,28 +173,32 @@
 <!--        </div>-->
 <!--    </div>-->
 </div>
-<h1>GCSE Combined Science</h1>
+<h1>OCR A Level Physics A</h1>
 <div class="exam-dates">
 
-    <div class="paper-one">
-
-        <h2>Paper 1</h2>
-        <h3>Tuesday, 2nd June 2026</h3>
-
+    <div class="Modelling-Physics">
+        <h2>Modelling Physics</h2>
+        <h3>Wednesday, 20th May 2026, pm</h3>
         <p id="demo"></p>
     </div>
-    <div class="paper-two">
-        <h2>Paper 2</h2>
-        <h3>Monday, 15th June 2026</h3>
 
+    <div class="Exploring-Physics">
+        <h2>Exploring Physics</h2>
+        <h3>Monday, 1th June 2026, am</h3>
         <p id="demo2"></p>
+    </div>
+
+    <div class="Unified-Physics">
+        <h2>Unified Physics</h2>
+        <h3>Monday, 8th June 2026, am</h3>
+        <p id="demo3"></p>
     </div>
 </div>
 
 
 <script>
     // Set the date we're counting down to
-    var countDownDate = new Date("June 2, 2026 09:00:00").getTime();
+    var countDownDate = new Date("May 20, 2026 13:00:00").getTime();
 
     // Update the count down every 1 second
     var x = setInterval(function() {
@@ -212,7 +229,7 @@
 
 <script>
     // Set the date we're counting down to
-    var countDownDate2 = new Date("June 15, 2026 09:00:00").getTime();
+    var countDownDate2 = new Date("June 1, 2026 09:00:00").getTime();
 
     // Update the count down every 1 second
     var x = setInterval(function() {
@@ -237,6 +254,37 @@
       if (distance2 < 0) {
         clearInterval(x);
         document.getElementById("demo2").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+</script>
+
+<script>
+    // Set the date we're counting down to
+    var countDownDate3 = new Date("June 8, 2026 09:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance3 = countDownDate3 - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance3 / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance3 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance3 % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance3 % (1000 * 60)) / 1000);
+
+      // Output the result in an element with id="demo3"
+      document.getElementById("demo3").innerHTML = days + " days " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+
+      // If the count down is over, write some text
+      if (distance3 < 0) {
+        clearInterval(x);
+        document.getElementById("demo3").innerHTML = "EXPIRED";
       }
     }, 1000);
 </script>
